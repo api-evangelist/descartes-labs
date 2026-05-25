@@ -1,0 +1,274 @@
+aid: descartes-labs
+name: Descartes Labs
+description: >-
+  Descartes Labs was a Santa Fe, New Mexico geospatial intelligence company
+  founded in 2014 as a spin-out from Los Alamos National Laboratory. The
+  company built the Descartes Labs Platform, a cloud-native geospatial data
+  refinery and analytics environment combining a petabyte-scale satellite
+  imagery archive (Landsat, Sentinel-1/2, MODIS, NAIP, PlanetScope, SkySat,
+  commercial radar, NEXRAD weather radar, plus client-uploaded data) with a
+  Python client library, JupyterHub-based workbench, and distributed compute
+  for training and running deep learning and remote-sensing models at scale.
+  Customers in agriculture, mining, energy, defense, insurance, and the U.S.
+  government used the platform to build production geospatial machine learning
+  pipelines covering crop forecasting, mineral exploration, infrastructure
+  monitoring, methane detection, wildfire response, and ESG reporting. The
+  Platform exposed a Catalog (imagery, bands, products, blobs, events), a
+  Compute service (containerised functions, jobs, schedules), a Vector
+  service (tabular and geospatial features), Dynamic Compute (lazy raster
+  algebra and tiling), Auth, and a `descarteslabs` CLI. In October 2024,
+  EarthDaily Analytics — backed by Antarctica Capital — acquired Descartes
+  Labs and the Descartes Labs Government, Inc. subsidiary, folding the team,
+  customers, and platform into the EarthDaily Constellation programme. The
+  product was rebranded EarthOne in 2025; the `descarteslabs` Python package
+  has been formally discontinued in favour of `earthdaily-earthone` (v5.x),
+  the github.com/descarteslabs organisation has been renamed to `dlarchives`,
+  www.descarteslabs.com is now a parked domain, and the docs.descarteslabs.com
+  developer portal has been retired in favour of EarthDaily-hosted EarthOne
+  documentation. This catalog entry preserves the historical Descartes Labs
+  Platform surface as an archive — see the EarthDaily / EarthOne profile for
+  the active product.
+type: Index
+position: Provider
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Geospatial
+  - Geospatial Intelligence
+  - Earth Observation
+  - Satellite Imagery
+  - Remote Sensing
+  - Raster
+  - Vector
+  - GIS
+  - Machine Learning
+  - Geospatial Analytics
+  - Agriculture
+  - Mining
+  - Energy
+  - Defense
+  - Climate
+  - Acquired
+  - EarthOne
+  - EarthDaily
+  - Discontinued
+url: https://raw.githubusercontent.com/api-evangelist/descartes-labs/refs/heads/main/apis.yml
+created: '2026-05-24'
+modified: '2026-05-24'
+specificationVersion: '0.20'
+apis:
+  - aid: descartes-labs:descartes-labs-platform
+    name: Descartes Labs Platform (Archived)
+    description: >-
+      The historical Descartes Labs Platform — a managed geospatial data
+      refinery and analytics environment exposing imagery catalog, raster
+      access, vector tables, compute functions, and authentication through a
+      Python client library, REST endpoints under *.descarteslabs.com, and a
+      `descarteslabs` CLI. The Platform was discontinued and rebranded as
+      EarthDaily EarthOne in 2025. APIs and endpoints below are preserved for
+      historical reference; no public OpenAPI specification was ever
+      published.
+    tags:
+      - Geospatial
+      - Platform
+      - Archived
+    humanURL: https://github.com/dlarchives/descarteslabs-python
+    properties:
+      - type: Documentation
+        url: https://github.com/dlarchives/descarteslabs-python
+      - type: SDK
+        url: https://github.com/dlarchives/descarteslabs-python
+      - type: PythonPackage
+        url: https://pypi.org/project/descarteslabs/
+      - type: Successor
+        url: https://github.com/earthdaily/earthone-python
+  - aid: descartes-labs:catalog
+    name: Descartes Labs Catalog API
+    description: >-
+      The Catalog organised all imagery and derived data on the Platform.
+      Products group Bands which group Images; Storage Blobs hold arbitrary
+      file artefacts; Events emit notifications when new images, blobs, or
+      scheduled triggers fire so that Compute Functions can be automatically
+      invoked. Catalog supported sharing via owners / writers / readers,
+      EventSubscriptions (SQS, ComputeFunctionCompleted, NewImage,
+      NewStorage, NewVector), and EventSchedules for calendar-based runs.
+      Backed by REST endpoints on *.descarteslabs.com and surfaced as
+      `descarteslabs.catalog`.
+    tags:
+      - Catalog
+      - Imagery
+      - Products
+      - Bands
+      - Blobs
+      - Events
+    humanURL: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/catalog
+    properties:
+      - type: SourceCode
+        url: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/catalog
+      - type: Module
+        url: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/catalog
+  - aid: descartes-labs:compute
+    name: Descartes Labs Compute API
+    description: >-
+      The Compute service ran user-supplied Python code as containerised
+      Functions against the imagery archive at scale. Users defined a
+      `Function` (CPUs, memory, environment, Docker image), submitted Jobs
+      (often via `Function.map` over hundreds of thousands of tiles), and
+      collected results. Compute integrated with Catalog Events to fire on
+      new imagery and emitted `compute-function-completed` events on
+      drain-to-zero. Surfaced as `descarteslabs.compute` (Function, Job,
+      JobStatistics, JobBulkCreateResult, ComputeClient).
+    tags:
+      - Compute
+      - Batch
+      - Functions
+      - Jobs
+    humanURL: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/compute
+    properties:
+      - type: SourceCode
+        url: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/compute
+      - type: Module
+        url: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/compute
+  - aid: descartes-labs:vector
+    name: Descartes Labs Vector API
+    description: >-
+      The Vector service hosted tabular and geospatial feature data as
+      Tables of typed columns with `uuid` identifiers and ipyleaflet
+      visualisation. Supported property filtering (including `ilike`
+      wildcard matches), table options for column ordering, and
+      tile-based rendering. Originally shipped as the standalone
+      `descarteslabs-vector` PyPI package and absorbed into
+      `descarteslabs.vector` in client 3.0.0.
+    tags:
+      - Vector
+      - Tabular
+      - Features
+      - Visualization
+    humanURL: https://github.com/dlarchives/descarteslabs-vector
+    properties:
+      - type: SourceCode
+        url: https://github.com/dlarchives/descarteslabs-vector
+      - type: Module
+        url: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/vector
+  - aid: descartes-labs:dynamic-compute
+    name: Descartes Labs Dynamic Compute API
+    description: >-
+      Dynamic Compute was the Platform's lazy map-computation engine for
+      interactive raster algebra and tile rendering in notebooks.
+      Expressions over imagery products (band math, mosaicking, temporal
+      compositing) were built lazily and evaluated on demand against the
+      compute backend, with results streamed as XYZ map tiles into an
+      ipyleaflet map. Distributed as the separate `descarteslabs-dynamic-compute`
+      package.
+    tags:
+      - Dynamic Compute
+      - Raster
+      - Tiles
+      - Map Algebra
+    humanURL: https://github.com/dlarchives/descarteslabs-dynamic-compute
+    properties:
+      - type: SourceCode
+        url: https://github.com/dlarchives/descarteslabs-dynamic-compute
+      - type: PythonPackage
+        url: https://pypi.org/project/descarteslabs-dynamic-compute/
+  - aid: descartes-labs:auth
+    name: Descartes Labs Auth API
+    description: >-
+      The Auth module handled token-based authentication against
+      app.descarteslabs.com — OAuth login flow, refresh tokens, and the
+      user namespace claim that served as a global identifier for the
+      authenticated user across Catalog, Compute, Vector, and Storage.
+      Surfaced as `descarteslabs.auth` and consumed transparently by every
+      other client module.
+    tags:
+      - Auth
+      - Authentication
+      - OAuth
+    humanURL: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/auth
+    properties:
+      - type: SourceCode
+        url: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/auth
+      - type: Module
+        url: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/auth
+common:
+  - type: Website
+    url: https://www.descarteslabs.com
+  - type: Documentation
+    url: https://docs.descarteslabs.com
+  - type: Support
+    url: https://support.descarteslabs.com
+  - type: SignIn
+    url: https://app.descarteslabs.com
+  - type: GitHubOrganization
+    url: https://github.com/dlarchives
+  - type: SDK
+    name: Descartes Labs Python Client (descarteslabs)
+    url: https://github.com/dlarchives/descarteslabs-python
+  - type: SDK
+    name: Descartes Labs Dynamic Compute
+    url: https://github.com/dlarchives/descarteslabs-dynamic-compute
+  - type: SDK
+    name: Descartes Labs Vector (legacy standalone)
+    url: https://github.com/dlarchives/descarteslabs-vector
+  - type: CodeExamples
+    name: Tutorials
+    url: https://github.com/dlarchives/tutorials
+  - type: CodeExamples
+    name: Example notebooks
+    url: https://github.com/dlarchives/example-notebooks
+  - type: CodeExamples
+    name: Workflows examples
+    url: https://github.com/dlarchives/workflows-examples
+  - type: CodeExamples
+    name: Enterprise Accelerator onboarding notebooks
+    url: https://github.com/dlarchives/descarteslabs-ea-notebooks
+  - type: Dataset
+    name: DL-COVID-19 mobility dataset
+    url: https://github.com/dlarchives/DL-COVID-19
+  - type: Research
+    name: Contrastive Sensor Fusion for remote sensing
+    url: https://github.com/dlarchives/contrastive_sensor_fusion
+  - type: PythonPackage
+    url: https://pypi.org/project/descarteslabs/
+  - type: PythonPackage
+    name: descarteslabs-dynamic-compute on PyPI
+    url: https://pypi.org/project/descarteslabs-dynamic-compute/
+  - type: Successor
+    name: EarthDaily EarthOne Python client (replaces descarteslabs)
+    url: https://github.com/earthdaily/earthone-python
+  - type: Successor
+    name: EarthDaily Analytics
+    url: https://earthdaily.com
+  - type: Acquisition
+    name: EarthDaily Analytics Announces Acquisition of Descartes Labs (Oct 2024)
+    url: https://earthdaily.com/blog/descartes-labs-acquisition
+  - type: Acquisition
+    name: PR Newswire — EarthDaily Analytics acquires Descartes Labs
+    url: https://www.prnewswire.com/news-releases/earthdaily-analytics-announces-acquisition-of-descartes-labs-302276388.html
+  - type: Features
+    data:
+      - Cloud-native geospatial data refinery built on a petabyte-scale satellite imagery archive
+      - Native ingest and time-aligned access to Landsat, Sentinel-1, Sentinel-2, MODIS, NAIP, PlanetScope, SkySat, commercial radar, and NEXRAD
+      - Catalog service organising Products, Bands, Images, Storage Blobs, Events, and EventSchedules
+      - Event-driven processing — NewImage / NewStorage / NewVector / compute-function-completed subscriptions delivered to SQS or Compute Functions
+      - Compute service for containerised Python Functions, Jobs, and bulk `Function.map` submissions over the imagery archive
+      - Vector service for tabular and geospatial feature tables with property filtering, `ilike` wildcards, and ipyleaflet visualisation
+      - Dynamic Compute engine for lazy raster algebra and on-demand XYZ tile rendering in notebooks
+      - JupyterHub-based workbench on app.descarteslabs.com for in-browser notebook authoring
+      - Python client `descarteslabs` (PyPI) with auth, catalog, compute, config, core, geo, and vector subpackages
+      - `descarteslabs` CLI for managing Products, Bands, Blobs, and sharing from the command line
+      - Sharing model with owners / writers / readers and AuthCatalogObject permission helpers
+      - DL-COVID-19 mobility dataset and Contrastive Sensor Fusion research releases
+      - Enterprise customers across agriculture, mining, energy, defense, insurance, and U.S. government
+      - Descartes Labs Government, Inc. subsidiary for U.S. federal workloads
+      - Discontinued in 2025 and superseded by EarthDaily EarthOne (`earthdaily-earthone` 5.x) following the October 2024 acquisition
+    sources:
+      - https://github.com/dlarchives/descarteslabs-python
+      - https://pypi.org/project/descarteslabs/
+      - https://earthdaily.com/blog/descartes-labs-acquisition
+      - https://www.prnewswire.com/news-releases/earthdaily-analytics-announces-acquisition-of-descartes-labs-302276388.html
+      - https://github.com/earthdaily/earthone-python
+    updated: '2026-05-24'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -76,7 +76,7 @@ apis:
     properties:
       - type: Documentation
         url: https://github.com/dlarchives/descarteslabs-python
-      - type: SDK
+      - type: SDKs
         url: https://github.com/dlarchives/descarteslabs-python
       - type: PythonPackage
         url: https://pypi.org/project/descarteslabs/
@@ -197,17 +197,17 @@ common:
     url: https://docs.descarteslabs.com
   - type: Support
     url: https://support.descarteslabs.com
-  - type: SignIn
+  - type: Login
     url: https://app.descarteslabs.com
   - type: GitHubOrganization
     url: https://github.com/dlarchives
-  - type: SDK
+  - type: SDKs
     name: Descartes Labs Python Client (descarteslabs)
     url: https://github.com/dlarchives/descarteslabs-python
-  - type: SDK
+  - type: SDKs
     name: Descartes Labs Dynamic Compute
     url: https://github.com/dlarchives/descarteslabs-dynamic-compute
-  - type: SDK
+  - type: SDKs
     name: Descartes Labs Vector (legacy standalone)
     url: https://github.com/dlarchives/descarteslabs-vector
   - type: CodeExamples
@@ -256,7 +256,7 @@ common:
       - Dynamic Compute engine for lazy raster algebra and on-demand XYZ tile rendering in notebooks
       - JupyterHub-based workbench on app.descarteslabs.com for in-browser notebook authoring
       - Python client `descarteslabs` (PyPI) with auth, catalog, compute, config, core, geo, and vector subpackages
-      - `descarteslabs` CLI for managing Products, Bands, Blobs, and sharing from the command line
+      - "`descarteslabs` CLI for managing Products, Bands, Blobs, and sharing from the command line"
       - Sharing model with owners / writers / readers and AuthCatalogObject permission helpers
       - DL-COVID-19 mobility dataset and Contrastive Sensor Fusion research releases
       - Enterprise customers across agriculture, mining, energy, defense, insurance, and U.S. government

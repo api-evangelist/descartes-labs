@@ -191,6 +191,8 @@ apis:
       - type: Module
         url: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/auth
 common:
+  - type: DomainSecurity
+    url: security/descartes-labs-domain-security.yml
   - type: Website
     url: https://www.descarteslabs.com
   - type: Documentation

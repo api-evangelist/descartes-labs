@@ -50,6 +50,26 @@ tags:
   - Satellite Imagery
   - Remote Sensing
   - Raster
+  - Vectors
+  - GIS
+  - Machine-Learning
+  - Geospatial Analytics
+  - Agriculture
+  - Mining
+  - Energy
+  - Defense
+  - Climate
+  - Acquired
+  - EarthOne
+  - EarthDaily
+  - Discontinued
+tags_raw:
+  - Geospatial
+  - Geospatial Intelligence
+  - Earth Observation
+  - Satellite Imagery
+  - Remote Sensing
+  - Raster
   - Vector
   - GIS
   - Machine Learning
@@ -108,6 +128,13 @@ apis:
     tags:
       - Catalog
       - Imagery
+      - Product
+      - Bands
+      - Blobs
+      - Event
+    tags_raw:
+      - Catalog
+      - Imagery
       - Products
       - Bands
       - Blobs
@@ -133,6 +160,11 @@ apis:
       - Compute
       - Batch
       - Functions
+      - Job
+    tags_raw:
+      - Compute
+      - Batch
+      - Functions
       - Jobs
     humanURL: https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/compute
     properties:
@@ -151,6 +183,11 @@ apis:
       `descarteslabs-vector` PyPI package and absorbed into
       `descarteslabs.vector` in client 3.0.0.
     tags:
+      - Vectors
+      - Tabular
+      - Features
+      - Visualization
+    tags_raw:
       - Vector
       - Tabular
       - Features
@@ -192,6 +229,8 @@ apis:
       Surfaced as `descarteslabs.auth` and consumed transparently by every
       other client module.
     tags:
+      - Authentication
+    tags_raw:
       - Auth
       - Authentication
       - OAuth

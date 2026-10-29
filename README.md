@@ -1,4 +1,4 @@
-# Descartes Labs (descartes-labs)
+# Descartes Labs
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,103 +64,56 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Descartes Labs was a Santa Fe, New Mexico geospatial intelligence company (founded 2014, spin-out from Los Alamos National Laboratory) that built a cloud-native geospatial data refinery — a petabyte-scale satellite imagery archive plus Python client, JupyterHub workbench, Catalog, Compute, Vector, and Dynamic Compute services — used by enterprise and U.S. government customers for production geospatial machine learning across agriculture, mining, energy, defense, insurance, and ESG monitoring. EarthDaily Analytics (backed by Antarctica Capital) acquired Descartes Labs in October 2024; the product has since been rebranded **EarthOne**, the `descarteslabs` Python package has been discontinued in favour of `earthdaily-earthone`, the GitHub org `descarteslabs` has been renamed to `dlarchives`, and `www.descarteslabs.com` is now a parked domain. This catalog entry preserves the historical Descartes Labs Platform surface.
+Descartes Labs was a Santa Fe, New Mexico geospatial intelligence company founded in 2014 as a spin-out from Los Alamos National Laboratory. The company built the Descartes Labs Platform, a cloud-native geospatial data refinery and analytics environment combining a petabyte-scale satellite imagery archive (Landsat, Sentinel-1/2, MODIS, NAIP, PlanetScope, SkySat, commercial radar, NEXRAD weather radar, plus client-uploaded data) with a Python client library, JupyterHub-based workbench, and distributed compute for training and running deep learning and remote-sensing models at scale. Customers in agriculture, mining, energy, defense, insurance, and the U.S. government used the platform to build production geospatial machine learning pipelines covering crop forecasting, mineral exploration, infrastructure monitoring, methane detection, wildfire response, and ESG reporting. The Platform exposed a Catalog (imagery, bands, products, blobs, events), a Compute service (containerised functions, jobs, schedules), a Vector service (tabular and geospatial features), Dynamic Compute (lazy raster algebra and tiling), Auth, and a `descarteslabs` CLI. In October 2024, EarthDaily Analytics — backed by Antarctica Capital — acquired Descartes Labs and the Descartes Labs Government, Inc. subsidiary, folding the team, customers, and platform into the EarthDaily Constellation programme. The product was rebranded EarthOne in 2025; the `descarteslabs` Python package has been formally discontinued in favour of `earthdaily-earthone` (v5.x), the github.com/descarteslabs organisation has been renamed to `dlarchives`, www.descarteslabs.com is now a parked domain, and the docs.descarteslabs.com developer portal has been retired in favour of EarthDaily-hosted EarthOne documentation. This catalog entry preserves the historical Descartes Labs Platform surface as an archive — see the EarthDaily / EarthOne profile for the active product.
 
-**URL:** [Visit APIs.json](https://raw.githubusercontent.com/api-evangelist/descartes-labs/refs/heads/main/apis.yml)
+**Areas:** Geospatial · Geospatial Intelligence · Earth Observation · Satellite Imagery · Remote Sensing · Raster · Vectors · GIS · Machine Learning · Geospatial Analytics · Agriculture · Mining
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Descartes Labs on APIs.io
 
-## Tags
+Everything profiled for Descartes Labs is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/descartes-labs/](https://apis.io/providers/descartes-labs/)** — or go straight to one of the APIs or properties below.
 
-- Geospatial, Geospatial Intelligence, Earth Observation, Satellite Imagery, Remote Sensing, Raster, Vector, GIS, Machine Learning, Geospatial Analytics, Agriculture, Mining, Energy, Defense, Climate, Acquired, EarthOne, EarthDaily, Discontinued
+### APIs (6)
 
-## Timestamps
+- [Descartes Labs Platform (Archived)](https://apis.io/apis/descartes-labs/descartes-labs-platform/) — The historical Descartes Labs Platform — a managed geospatial data refinery and analytics environment exposing imagery catalog, raster access, vector…
+- [Descartes Labs Catalog API](https://apis.io/apis/descartes-labs/catalog/) — The Catalog organised all imagery and derived data on the Platform. Products group Bands which group Images; Storage Blobs hold arbitrary file artefacts;…
+- [Descartes Labs Compute API](https://apis.io/apis/descartes-labs/compute/) — The Compute service ran user-supplied Python code as containerised Functions against the imagery archive at scale. Users defined a `Function` (CPUs, memory,…
+- [Descartes Labs Vector API](https://apis.io/apis/descartes-labs/vector/) — The Vector service hosted tabular and geospatial feature data as Tables of typed columns with `uuid` identifiers and ipyleaflet visualisation. Supported…
+- [Descartes Labs Dynamic Compute API](https://apis.io/apis/descartes-labs/dynamic-compute/) — Dynamic Compute was the Platform's lazy map-computation engine for interactive raster algebra and tile rendering in notebooks. Expressions over imagery…
+- [Descartes Labs Auth API](https://apis.io/apis/descartes-labs/auth/) — The Auth module handled token-based authentication against app.descarteslabs.com — OAuth login flow, refresh tokens, and the user namespace claim that…
 
-- **Created:** 2026-05-24
-- **Modified:** 2026-05-24
+### Published properties
 
-## Status
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Field | Value |
-|---|---|
-| Company status | Acquired by EarthDaily Analytics — October 2024 |
-| Product status | Discontinued, rebranded as EarthDaily **EarthOne** |
-| Python package | `descarteslabs` 4.0.0.post2 (Dec 2025) — final release, marked **Discontinued. Please use `earthdaily-earthone` instead** |
-| Successor package | [`earthdaily-earthone`](https://github.com/earthdaily/earthone-python) 5.x |
-| GitHub org | github.com/descarteslabs renamed to [github.com/dlarchives](https://github.com/dlarchives) |
-| Website | www.descarteslabs.com — parked / domain landing page |
-| Docs | docs.descarteslabs.com — retired (DNS removed) |
-| Subsidiary | Descartes Labs Government, Inc. — folded into EarthDaily |
+#### Security (1)
 
-## APIs
+Authentication, trust centre, and vulnerability disclosure.
 
-The historical platform was a managed geospatial data refinery exposed through the `descarteslabs` Python client. No public OpenAPI specification was ever published — REST endpoints under `*.descarteslabs.com` were considered an implementation detail of the SDK.
+- [Descartes Labs Domain Security](https://apis.io/security/descartes-labs/descartes-labs-domain-security/)
 
-### Descartes Labs Platform (Archived)
-The historical Descartes Labs Platform — cloud-native geospatial data refinery exposing imagery catalog, raster access, vector tables, compute functions, and authentication via a Python client library, `descarteslabs` CLI, and REST endpoints under `*.descarteslabs.com`. Discontinued in 2025.
+## Where to find this API
 
-- [Source — descarteslabs-python](https://github.com/dlarchives/descarteslabs-python)
-- [PyPI — descarteslabs](https://pypi.org/project/descarteslabs/)
-- [Successor — earthdaily-earthone](https://github.com/earthdaily/earthone-python)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Descartes Labs Catalog API
-Products, Bands, Images, Storage Blobs, and Events. Sharing model with owners / writers / readers and EventSubscriptions (SQS, ComputeFunctionCompleted, NewImage, NewStorage, NewVector) plus calendar-based EventSchedules.
+- [Website](https://www.descarteslabs.com)
+- [Documentation](https://docs.descarteslabs.com)
+- [Support](https://support.descarteslabs.com)
+- [GitHub](https://github.com/dlarchives)
 
-- [Source — descarteslabs/catalog](https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/catalog)
+## API Evangelist rating
 
-### Descartes Labs Compute API
-Containerised Python `Function` definitions (CPUs, memory, environment) executed as `Job`s — often via `Function.map` over hundreds of thousands of tiles — with `compute-function-completed` events on drain-to-zero.
+**Unrated** — none of the rubric's checks were satisfied by anything we could find.
 
-- [Source — descarteslabs/compute](https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/compute)
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
 
-### Descartes Labs Vector API
-Tabular and geospatial feature `Table`s with typed columns, `uuid` identifiers, property filtering (including `ilike`), and ipyleaflet tile visualisation. Folded into the main client in 3.0.0.
+## How this profile is made
 
-- [Source — descarteslabs/vector](https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/vector)
-- [Source — descarteslabs-vector (legacy)](https://github.com/dlarchives/descarteslabs-vector)
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-### Descartes Labs Dynamic Compute API
-Lazy map-computation engine for interactive raster algebra and on-demand XYZ tile rendering in notebooks. Distributed as the standalone `descarteslabs-dynamic-compute` package.
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Descartes Labs: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-- [Source — descarteslabs-dynamic-compute](https://github.com/dlarchives/descarteslabs-dynamic-compute)
-- [PyPI — descarteslabs-dynamic-compute](https://pypi.org/project/descarteslabs-dynamic-compute/)
+## Open an issue
 
-### Descartes Labs Auth API
-OAuth token flow against `app.descarteslabs.com`, refresh handling, and the user-namespace global identifier consumed by every other client module.
-
-- [Source — descarteslabs/auth](https://github.com/dlarchives/descarteslabs-python/tree/master/descarteslabs/auth)
-
-## Migration
-
-EarthDaily provides a migration path from `descarteslabs` to `earthdaily-earthone`:
-
-- `import descarteslabs as dl` → `import earthdaily.earthone as dl`
-- `*.descarteslabs.com` URLs → `*.earthone.earthdaily.com` / `*.earthdaily.com`
-- Catalog / Vector product prefix `descarteslabs:` → `earthdaily:`
-- `DESCARTESLABS_*` environment variables → `EARTHONE_*`
-
-See [github.com/earthdaily/earthone-python](https://github.com/earthdaily/earthone-python) for the active client.
-
-## Common
-
-- [Website (parked)](https://www.descarteslabs.com)
-- [Documentation (retired)](https://docs.descarteslabs.com)
-- [Support (retired)](https://support.descarteslabs.com)
-- [Sign-in app](https://app.descarteslabs.com)
-- [GitHub organisation — dlarchives](https://github.com/dlarchives)
-- [Python client — descarteslabs-python](https://github.com/dlarchives/descarteslabs-python)
-- [PyPI — descarteslabs](https://pypi.org/project/descarteslabs/)
-- [Tutorials](https://github.com/dlarchives/tutorials)
-- [Example notebooks](https://github.com/dlarchives/example-notebooks)
-- [Workflows examples](https://github.com/dlarchives/workflows-examples)
-- [Enterprise Accelerator onboarding notebooks](https://github.com/dlarchives/descarteslabs-ea-notebooks)
-- [DL-COVID-19 mobility dataset](https://github.com/dlarchives/DL-COVID-19)
-- [Contrastive Sensor Fusion research](https://github.com/dlarchives/contrastive_sensor_fusion)
-- [Successor — EarthDaily EarthOne Python client](https://github.com/earthdaily/earthone-python)
-- [Successor — EarthDaily Analytics](https://earthdaily.com)
-- [Acquisition announcement — EarthDaily (Oct 2024)](https://earthdaily.com/blog/descartes-labs-acquisition)
-- [Acquisition — PR Newswire](https://www.prnewswire.com/news-releases/earthdaily-analytics-announces-acquisition-of-descartes-labs-302276388.html)
-
-## Maintainers
-
-- **Kin Lane** — kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/descartes-labs/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
